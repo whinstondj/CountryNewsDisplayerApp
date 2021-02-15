@@ -1,10 +1,13 @@
 package com.example.countrynewsdisplayerapp.ui.fragment.detail
 
+import android.app.SearchManager
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.navArgs
 import com.bumptech.glide.Glide
@@ -25,9 +28,12 @@ class NewsDetailFragment : Fragment() {
 
     val args: NewsDetailFragmentArgs by navArgs()
 
+    private var buttonURL: String? = null
+
    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
         binding = FragmentNewsDetailBinding.inflate(inflater, container, false)
+       setupView()
 
        viewModel.getState().observe(viewLifecycleOwner, { state ->
            when (state) {
@@ -52,6 +58,32 @@ class NewsDetailFragment : Fragment() {
     }
 
     /**
+     * Setting Elements
+     */
+    private fun setupView() {
+        binding.readMoreButton.setOnClickListener {
+            buttonURL?.let {
+                searchWeb(it)
+            } ?: run {
+                Toast.makeText(requireActivity(), "No existe una URL", Toast.LENGTH_LONG).show()
+            }
+        }
+    }
+
+    /**
+     * Function to search on Internet
+     */
+    private fun searchWeb(query: String) {
+        val intent = Intent(Intent.ACTION_WEB_SEARCH).apply {
+            putExtra(SearchManager.QUERY, query)
+        }
+        if (intent.resolveActivity(requireActivity().packageManager) != null) {
+            startActivity(intent)
+        }
+    }
+
+
+    /**
      * Normal estate, everything works!
      */
     private fun updateToNormalState(data: NewsDetailState) {
@@ -65,6 +97,8 @@ class NewsDetailFragment : Fragment() {
                 .centerCrop()
                 .placeholder(R.drawable.ic_no_photos)
                 .into(binding.newsDetailImageView)
+
+        buttonURL = data.article?.url
 
     }
 

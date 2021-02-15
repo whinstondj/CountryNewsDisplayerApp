@@ -15,6 +15,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.countrynewsdisplayerapp.R
 import com.example.countrynewsdisplayerapp.base.BaseExtraData
 import com.example.countrynewsdisplayerapp.base.BaseState
+import com.example.countrynewsdisplayerapp.base.noInternetConnectivity
 import com.example.countrynewsdisplayerapp.data.Article
 import com.example.countrynewsdisplayerapp.databinding.FragmentNewsListBinding
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
@@ -125,6 +126,7 @@ class NewsListFragment : Fragment() {
         val msg = when (dataError) {
             is HttpException -> "Fatal error: " + dataError.code().toString()
             is UnknownHostException -> "No tienes conexión a internet"
+            is noInternetConnectivity -> "Encienda la Wifi o los datos moviles e intente de nuevo"
             else -> "Error genérico"
         }
         MaterialAlertDialogBuilder(requireActivity())
