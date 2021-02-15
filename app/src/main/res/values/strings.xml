@@ -1,6 +1,5 @@
 <resources>
     <string name="app_name">Country News Displayer App</string>
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="NombreAplicacion">Ultimas Noticias</string>
     <string name="detailNewsWindowsTitleText">Detalle de la Noticia</string>
     <string name="homeNewsWindowsTitleText">Noticias de USA</string>

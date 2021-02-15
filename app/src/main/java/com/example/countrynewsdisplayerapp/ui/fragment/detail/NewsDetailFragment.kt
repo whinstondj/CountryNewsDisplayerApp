@@ -19,6 +19,7 @@ import com.example.countrynewsdisplayerapp.databinding.ItemNewsListBinding
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import retrofit2.HttpException
 import java.net.UnknownHostException
+import android.app.Activity
 
 class NewsDetailFragment : Fragment() {
 
@@ -78,7 +79,7 @@ class NewsDetailFragment : Fragment() {
             putExtra(SearchManager.QUERY, query)
         }
         if (intent.resolveActivity(requireActivity().packageManager) != null) {
-            startActivity(intent)
+            requireActivity().startActivity(intent)
         }
     }
 
