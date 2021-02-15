@@ -1,12 +1,15 @@
 <resources>
-    <string name="app_name">CountryNewsDisplayerApp</string>
+    <string name="app_name">Country News Displayer App</string>
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="NombreAplicacion">Ultimas Noticias</string>
     <string name="detailNewsWindowsTitleText">Detalle de la Noticia</string>
-    <string name="homeNewsWindowsTitleText">Home de Noticias</string>
+    <string name="homeNewsWindowsTitleText">Noticias de USA</string>
+    <string name="homeNewsVeWindowsTitleText">Noticias de Venezuela</string>
     <string name="searchBarTitleText">Titulo de Noticia</string>
     <string name="listNoAuthorText">No Hay Autor</string>
     <string name="noAuthorTextDisplayed">No hay autor conocido</string>
     <string name="noDescriptionTextDisplayed">No tenemos ninguna descripcion de la noticia</string>
     <string name="readMoreButtonText">Leer Mas</string>
+    <string name="itemMenuNewsVeText">Noticias Ve</string>
+    <string name="itemMenuNewsUsText">Noticias US</string>
 </resources>

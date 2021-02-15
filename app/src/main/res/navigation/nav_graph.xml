@@ -22,5 +22,14 @@
             android:name="article"
             app:argType="com.example.countrynewsdisplayerapp.data.Article" />
     </fragment>
+    <fragment
+        android:id="@+id/newsListVeFragment"
+        android:name="com.example.countrynewsdisplayerapp.ui.fragment.list.NewsListVeFragment"
+        android:label="@string/homeNewsVeWindowsTitleText"
+        tools:layout="@layout/fragment_news_ve_list">
+        <action
+            android:id="@+id/action_newsListVeFragment_to_newsDetailFragment"
+            app:destination="@id/newsDetailFragment" />
+    </fragment>
 
 </navigation>

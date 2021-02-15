@@ -25,7 +25,7 @@ class MainActivity : AppCompatActivity() {
         val navController = (supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment).navController
 
         //Support top toolbar
-        val appBarConfiguration = AppBarConfiguration(setOf(R.id.newsListFragment), binding.drawerLayout)
+        val appBarConfiguration = AppBarConfiguration(setOf(R.id.newsListFragment, R.id.newsListVeFragment), binding.drawerLayout)
 
         //Custom toolbar
         binding.mainContent.myToolBar.setupWithNavController(navController, appBarConfiguration)
