@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+    <item
+        android:icon="@drawable/ic_view_headline_24px"
+        android:layout_gravity="center"
+        android:title=""
+        app:showAsAction="always"/>
+    <item
+        android:id="@+id/newsListFragment"
+        android:icon="@drawable/ic_made_in_the_usa"
+        android:title="@string/itemMenuNewsUsText"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/newsListVeFragment"
+        android:icon="@drawable/ic_venezuela"
+        android:title="@string/itemMenuNewsVeText"
+        app:showAsAction="ifRoom" />
+</menu>
